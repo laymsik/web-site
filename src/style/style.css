@@ -170,6 +170,7 @@ main {
 }
 
 #map {
+    scroll-padding-top: 80px;
     height: 300px;
     width: 100%;
     border-radius: 15px;
@@ -196,13 +197,6 @@ main {
     border-radius: 15px;
     color: #5c3a3a;
     outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    background: url(/src/images/ddicon.png) no-repeat right center;
-    background-size: 15px;
-    background-position-x: 155px;
     background-color: #fccf94da;
 }
 
