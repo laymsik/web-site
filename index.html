@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="src/style/style.css">
+    <link rel="icon" href="src/images/iconweb.png" type="image/x-icon">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <h1>Проект</h1>
+        </div>
+        <ul id="menuList" onclick="toggleMenuClose()">
+            <li><a href="#about" onclick="toggleMenuClose()">О проекте</a></li>
+            <li><a href="#streets" onclick="toggleMenuClose()">Галерея улиц</a></li>
+            <li><a href="#mapcard" onclick="toggleMenuClose()">Карта</a></li>
+            <li><a href="#forms" onclick="toggleMenuClose()">Обратная связь</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+
+    <main class="main" onclick="toggleMenuClose()">
+        <section class="about" id="about">
+            <h2>О проекте</h2>
+            <p>Улицы нашего города — это не просто асфальт и бордюры, это свидетельства подвига, мужества и стойкости наших соотечественников. <br> Мы хотим обратить внимание на улицы, названные в честь тех, кто отдал свою жизнь за свободу и независимость нашей страны. <br> Этот проект является попыткой сохранить память о героях, которые, рискуя своей жизнью, защищали родину. Мы собираем информацию о каждом герое, в честь которого названа улица, чтобы познакомить жителей Элисты с их подвигами. Поэтому именно вы можете помочь в продвижении данного проекта, и благодаря специальной обратной связи - дополнить информацию.</p>
+        </section>
+
+        <section id="streets">
+            <h2>Улицы героев</h2>
+            <div class="street" onclick="openModal('hero1')">
+                <h3>Улица Клыкова Ю.К.</h3>
+                <p>1925 г. - 1942 г.</p>
+            </div>
+            <div class="street" onclick="openModal('hero2')">
+                <h3>Улица Хечеева Б.М.</h3>
+                <p>1917 г. - 1954 г.</p>
+            </div>
+            <div class="street" onclick="openModal('hero3')">
+                <h3>Улица Сельгикова М.А.</h3>
+                <p>1920 г. - 1985 г.</p>
+            </div>
+            <div class="street" onclick="openModal('hero4')">
+                <h3>Улица Молоканова</h3>
+                <p>1910 г. - 1942 г.</p>
+            </div>
+            <div class="street" onclick="openModal('hero5')">
+                <h3>Улица Адучиева</h3>
+                <p>1911 г. - 1945 г.</p>
+            </div>
+        </section>
+
+        <section class="map" id="mapcard">
+            <h2>Карта</h2>
+
+            <div class="custom-dropdown">
+                <div class="dropdown-button" onclick="toggleDropdown()"><img src="src/images/ddicon.png" alt="#" class="button-icon">Выберите улицу</div>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div onclick="showStreet('lin1')">Улица Клыкова</div>
+                    <div onclick="showStreet('lin2')">Улица Хечеева</div>
+                    <div onclick="showStreet('lin3')">Улица Сельгикова</div>
+                    <div onclick="showStreet('lin4')">Улица Молоканова</div>
+                    <div onclick="showStreet('lin5')">Улица Адучиева</div>
+                </div>
+            </div>
+            
+            <div id="map"></div>
+        </section>
+
+        <section id="forms">
+            <h2>Обратная связь</h2>
+
+            <div class="contact-box">
+                <form action="https://getform.io/f/byvvovla" method="POST">
+                    <input type="text" name="name" placeholder="Введите ваше имя.." class="input-name" autocomplete="off">
+                    <input type="email" name="email" placeholder="Укажите почту.." class="input-mail" autocomplete="off">
+                    <textarea name="message" placeholder="Ваше сообщение.." class="input-message" autocomplete="off"></textarea>
+
+                    <input type="hidden" name="_gotcha" style="display:none !important">
+                    <button type="submit" class="button" autocomplete="off">Отправить</button>
+                </form>
+            </div>
+        </section>
+    
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title">Название героя</h2>
+                <span id="photo"></span>
+                <p id="modal-description">Описание героя и улицы.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="src/script/script.js"></script>
+    <script src="https://kit.fontawesome.com/2993e6c440.js" crossorigin="anonymous"></script>
+</body>
+</html>

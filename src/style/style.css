@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+}
+
+html, body {
+    color: #5c3a3a;
+    width: 100%;
+    background-color: #f9eddf;
+    scroll-behavior: smooth;
+}
+
+h2 {
+    color: #b33a23;
+    margin-bottom: 16px;
+}
+
+/* ------------------- navigation menu ------------------- */
+
+nav {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #b33a23;
+    height: 70px;
+    color: #f9eddf;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f9eddf;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin: 0 -20px;
+}
+
+nav ul li a:hover {
+    background-color: #96311d;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon i {
+    color: #f9eddf;
+    font-size: 30px;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+}
+
+/* ------------------- main ------------------- */
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.main {
+    
+    margin-top: 0px;
+}
+
+/* ------------------- section about ------------------- */
+
+.about {
+    border-top: 80px solid transparent;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 16px;
+}
+
+/* ------------------- section streets ------------------- */
+
+#streets {
+    scroll-margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.street {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: background 0.3s;
+    background: #f5e6d3da;
+}
+
+.street:hover {
+    background: #f4dcbdda;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    border-radius: 15px;
+    background-color: #f9eddf;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.photo {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ------------------- map ------------------- */
+
+.map {
+    margin-bottom: 30px;
+}
+
+#mapcard {
+    scroll-margin-top: 80px;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    z-index: 0;
+}
+
+#map:focus {
+    outline-color: #f8bc6eda;
+}
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+.dropdown-button {
+    padding: 10px 10px 10px 15px;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: #fccf94da;
+    color: #5c3a3a;
+    cursor: pointer;
+    text-align: left;
+    width: 200px;
+    margin-bottom: 5px;
+}
+
+.button-icon {
+    height: 18px;
+    position: absolute;
+    top: 12px;
+    left: 165px;
+    pointer-events: none;
+}
+
+.dropdown-button:hover {
+    background-color: #f8bc6eda;
+    transition: all 0.5s ease;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: #fccf94da;
+    color: #5c3a3a;
+    z-index: 1;
+    width: 200px;
+}
+.dropdown-content div {
+    padding: 10px;
+    cursor: pointer;
+}
+.dropdown-content div:hover {
+    background-color: #f8bc6eda;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.leaflet-control-container {
+    display: none;
+}
+
+.leaflet-control-attribution {
+    display: none;
+}
+
+/* ------------------- reverse form ------------------- */
+
+.forms {
+    margin-bottom: 30px;
+}
+
+.contact-box {
+    border: 1px solid #ccc;
+    height: 280px;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: background 0.3s;
+    background: #f5e6d3da;
+}
+
+.input-name {
+    font-family: "Roboto";
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    display: block;
+    font-size: 16px;
+    height: 40px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #f9eddf;
+    margin-bottom: 10px;
+    color: #5c3a3a;
+    outline: none;
+}
+
+.input-mail {
+    font-family: "Roboto";
+    background-color: transparent;
+    padding-bottom: 5px;
+    border: none;
+    height: 40px;
+    width: 100%;
+    background-color: #f9eddf;
+    border-radius: 15px;
+    padding: 0 10px;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #5c3a3a;
+    outline: none;
+}
+
+.input-message {
+    font-family: "Roboto";
+    background-color: #f9eddf;
+    border: none;
+    color: #5c3a3a;
+    height: 100px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px 0 0 10px;
+    resize: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: #fccf94da;
+    color: #5c3a3a;
+}
+
+.button:hover {
+    background-color: #f8bc6eda;
+    transition: all 0.5s ease;
+}
+
+/* ------------------- optimization ------------------- */
+
+@media (max-width: 900px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background-color: #b33a23;
+        gap: 0;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        padding: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    #menuList {
+        transition: all 0.5s;
+    }
+
+    .modal {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (min-width: 900px) {
+    .modal-content {
+        width: 30%;
+    }
+}
